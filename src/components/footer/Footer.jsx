@@ -1,13 +1,10 @@
 import React from "react";
+import {FooterStyle} from "./FooterStyle";
 
 export default function Footer() {
     return (
-        <footer>
-            <ul>
-                <li>blablabla</li>
-                <li>blablabla</li>
-                <li>blablabla</li>
-            </ul>
-        </footer>
+        <FooterStyle>
+            <h3>React movies © 2022 todos os direitos reservados. </h3>
+        </FooterStyle>
     )
 }
