@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Main = styled.main`
   display: flex;
   flex-direction: column;
+  align-items: center;
   box-sizing: border-box;
   background-color: black;
   width: 100% ;
@@ -10,6 +11,9 @@ export const Main = styled.main`
   h1{
     font-size: 2rem;
     color: white;
+  }
+  @media screen and (min-width: 750px){
+    align-items: initial;
   }
 `
 
