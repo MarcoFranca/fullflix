@@ -42,7 +42,7 @@ export const MainSectionContainer = styled.section`
       border: solid red 1px;
       position: relative;
       width: 320px;
-      transition: 10ms;
+      transition: 500ms;
       cursor: pointer;
     }
   }
