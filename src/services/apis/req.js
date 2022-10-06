@@ -1,10 +1,10 @@
 import axios from "axios";
-import {key, url, languageBr} from "./apiConfig";
+import {api} from "./apiConfig";
 
 
-// função de capitura de imagens dos filmes
+// função de caputura de imagens dos filmes
 export const getList = (setState) => {
-  axios.get(`${url}/movie/popular?${key}&${languageBr}&page=1`)
+  axios.get(`${api.url}/movie/popular?${api.key}&${api.languageBr}&page=1`)
       .then((response)=>{
         setState(response.data.results)})
       .catch((error)=>{
@@ -13,9 +13,10 @@ export const getList = (setState) => {
 }
 
 // Função de captura de detalhes dos filmes
-export const getDetails = (id) => {
-  axios.get(`${url}/movie/${id}?${key}&${languageBr}`)
+export const getDetails = (id, setState) => {
+  axios.get(`${api.url}/movie/${id}?${api.key}&${api.languageBr}`)
       .then((response)=>{
+          setState(response)
         console.log(response)})
       .catch((error)=>{
     console.log(error)})
