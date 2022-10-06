@@ -1,11 +1,11 @@
 import React from "react";
-import NetflixLogo from "../../assets/images/Logo-Netflix-1.gif"
+import FullflixLogo from "../../assets/images/backgroundFullflix.png"
 import {HeaderStyle} from "./HeaderStyle";
 
 export default function Header() {
     return (
         <HeaderStyle>
-            <img src={NetflixLogo} alt={"logo Netflix"}/>
+            <img src={FullflixLogo} alt={"logo Fullflix"}/>
         </HeaderStyle>
     )
 }
