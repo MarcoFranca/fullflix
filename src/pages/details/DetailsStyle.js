@@ -5,12 +5,13 @@ export const Header = styled.header`
   display: flex;
   align-items: center;
   justify-content: center;
-    background-color: ${colors.nightBackground};
+  height: 5rem;
+  background-color: ${colors.nightBackground};
   h1{
     color: ${colors.colorWhite};
     font-size: 1.8rem;
   }
 `
 export const Main = styled.main`
-height: auto;
+  height: auto;
 `
