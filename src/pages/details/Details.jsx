@@ -11,7 +11,6 @@ import Loading from "../../assets/images/Spinner.svg"
 export default function Details() {
     const state = useSelector((state)=> state.page.value2)
 
-            console.log(state)
     return (
         (state === undefined) ?
             <div>
