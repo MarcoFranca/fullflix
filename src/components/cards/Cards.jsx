@@ -17,7 +17,7 @@ export default function Cards() {
 
     useEffect(()=>{
         dispatch(getMovieDetails(details))
-    },[details])
+    },[details, dispatch])
 
     console.log(movies)
 
@@ -31,7 +31,7 @@ export default function Cards() {
         dispatch(goToDetail())
         onHouverDetail(event)
         setTimeout(() =>
-        {navigate("/details")}, 150)
+        navigate("/details"), 400)
     }
 
     return (
