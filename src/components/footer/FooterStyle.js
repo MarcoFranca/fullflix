@@ -6,4 +6,5 @@ export const FooterStyle = styled.footer`
   background-color: black;
   color: white;
   padding-inline-start: 0;
+  height: 5rem;
 `
