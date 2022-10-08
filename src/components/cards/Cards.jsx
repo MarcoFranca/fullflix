@@ -30,8 +30,8 @@ export default function Cards() {
     const click = (event, navigate) => {
         dispatch(goToDetail())
         onHouverDetail(event)
-
-        navigate("/details")
+        setTimeout(() =>
+        navigate("/details"), 400)
     }
 
     return (
