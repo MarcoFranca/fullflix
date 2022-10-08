@@ -7,8 +7,8 @@ import {getMovieDetails, goToDetail} from "../../assets/redux/counterSlice";
 import {useNavigate} from "react-router-dom";
 
 export default function Cards() {
-    const [movies, setMovies] = useState([])
-    const [details, setDetails] = useState()
+    const [movies, setMovies] = useState([]);
+    const [details, setDetails] = useState();
     const dispatch = useDispatch();
 
     useEffect( ()=>{
@@ -30,8 +30,8 @@ export default function Cards() {
     const click = (event, navigate) => {
         dispatch(goToDetail())
         onHouverDetail(event)
-        setTimeout(() =>
-        navigate("/details"), 400)
+
+        navigate("/details")
     }
 
     return (

@@ -7,6 +7,7 @@ export const Header = styled.header`
   justify-content: center;
   height: 5rem;
   background-color: ${colors.nightBackground};
+  
   h1{
     color: ${colors.colorWhite};
     font-size: 1.8rem;
