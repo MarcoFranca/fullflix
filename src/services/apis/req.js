@@ -4,7 +4,12 @@ import {api} from "./apiConfig";
 
 // função de caputura de imagens dos filmes
 export const getList = (setState) => {
-  axios.get(`${api.url}/movie/popular?${api.key}&${api.languageBr}&page=1`)
+  axios.get(api.urlBase + api.popular + api.languageBr,{
+      headers:{
+      'Authorization': `Bearer ${api.token}`,
+      'Content-Type': `application/json;charset=utf-8`
+      }
+  })
       .then((response)=>{
         setState(response.data.results)})
       .catch((error)=>{
@@ -13,11 +18,18 @@ export const getList = (setState) => {
 }
 
 // Função de captura de detalhes dos filmes
-export const getDetails = (id, setState) => {
-  axios.get(`${api.url}/movie/${id}?${api.key}&${api.languageBr}`)
+export const getDetails = (id, setState,navigate) => {
+  axios.get(api.urlBase + id + "?" + api.languageBr ,{
+      headers:{
+          'Authorization': `Bearer ${api.token}`,
+          'Content-Type': `application/json;charset=utf-8`
+      }
+  })
       .then((response)=>{
           setState(response)
-        console.log(response)})
+        console.log(response)
+          navigate("/details")
+        })
       .catch((error)=>{
     console.log(error)})
 }
