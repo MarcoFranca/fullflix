@@ -27,7 +27,7 @@ export const MainSectionContainer = styled.section`
 
   .card{
     justify-self: center;
-    align-self: center; 
+    align-self: center;
     width: 300px;
     min-height: 630px;
     border: solid gray 1px;
@@ -38,10 +38,25 @@ export const MainSectionContainer = styled.section`
     img{
       width: 100%;
     }
+
+    span{
+      width: 0;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      word-break: break-word;
+
+    }
+    h2, p{
+      pointer-events: none;
+    }
+
+    .card__content{
+      padding: 1rem;
+    }
+
     :hover{
       border: solid red 1px;
-      position: relative;
-      width: 320px;
+      transform: scale(1.1);
       transition: 500ms;
       cursor: pointer;
     }
