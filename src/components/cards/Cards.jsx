@@ -59,9 +59,9 @@ export default function Cards() {
                                 >
                                     <img id={movie.id} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.original_title} />
                                     <div id={movie.id} className="card__content">
-                                        <h2 >Título: <span>{movie.title}</span></h2>
-                                        <p >Nota: {movie.vote_average}</p>
-                                        <p >Lançamento: {format(new Date(movie.release_date), 'dd/MM/yyyy')}</p>
+                                        <h2>{movie.title}</h2>
+                                        <p>Lançamento: {format(new Date(movie.release_date), 'dd/MM/yyyy')}</p>
+                                        <p>Nota: {movie.vote_average}</p>
                                     </div>
                                 </div>
                             </div>
