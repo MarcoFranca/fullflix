@@ -14,7 +14,7 @@ export default function Cards() {
 //**************** Hooks  **********************
     const [movies, setMovies] = useState([]);
     const [details, setDetails] = useState();
-    
+
     useEffect( ()=>{
         getList(setMovies)
     },[])
