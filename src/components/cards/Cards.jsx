@@ -5,34 +5,45 @@ import {Main, MainSectionContainer} from "./CardsStyle";
 import {useDispatch} from "react-redux";
 import {getMovieDetails, goToDetail} from "../../assets/redux/counterSlice";
 import {useNavigate} from "react-router-dom";
+import {format} from "date-fns";
 
 export default function Cards() {
+    const dispatch = useDispatch();
+    const navigate = useNavigate()
+
+//**************** Hooks  **********************
     const [movies, setMovies] = useState([]);
     const [details, setDetails] = useState();
-    const dispatch = useDispatch();
-
+    
     useEffect( ()=>{
         getList(setMovies)
     },[])
 
     useEffect(()=>{
+        goDetails(navigate, details)
+    },[details, navigate])
+
+    // ************ Functions ***************
+
+    const goDetails = (navigate, details)=>{
         dispatch(getMovieDetails(details))
-    },[details, dispatch])
+        if (!details){
+            console.log("falso")
+        }else {
+            console.log("verdadeiro")
+            console.log(details)
+            navigate('/details')
+
+        }
+    }
+
+    const onClick = (event) => {
+        dispatch(goToDetail())
+        getDetails(event.target.id, setDetails)
+    }
+
 
     console.log(movies)
-
-    const onHouverDetail = (event)=>{
-        getDetails(event.target.id, setDetails)
-        console.log(details)
-    }
-    let navigate = useNavigate()
-
-    const click = (event, navigate) => {
-        dispatch(goToDetail())
-        onHouverDetail(event)
-        setTimeout(() =>
-        navigate("/details"), 400)
-    }
 
     return (
         <Main>
@@ -43,12 +54,15 @@ export default function Cards() {
                             <div key={movie.id}>
                                 <div className="card" key={movie.id}
                                      onClick={(event)=> {
-                                         click(event,navigate)}}
+                                         onClick(event)}}
                                      id={movie.id}
                                 >
                                     <img id={movie.id} src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.original_title} />
-                                    <h2>Título: {movie.title}</h2>
-                                    <p>Nota: {movie.vote_average}</p>
+                                    <div id={movie.id} className="card__content">
+                                        <h2 >Título: <span>{movie.title}</span></h2>
+                                        <p >Nota: {movie.vote_average}</p>
+                                        <p >Lançamento: {format(new Date(movie.release_date), 'dd/MM/yyyy')}</p>
+                                    </div>
                                 </div>
                             </div>
                         )
