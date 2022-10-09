@@ -15,8 +15,14 @@ export default function CardDetail() {
             </div>
             <DivCardContent className="card__content">
                 <h2><b>Título: </b>{state.data.title}</h2>
-                <h2><b>Sinopse: </b> {state.data.overview}</h2>
                 <h2><b>Lançamento:</b>{format(new Date(state.data.release_date), 'dd/MM/yyyy')}</h2>
+                <h2><b>Genero:</b>
+                    {state.data.genres.map((genre)=>(
+                            <span key={genre.id}>{genre.name}</span>
+
+                    ))}
+                </h2>
+                <h2><b>Sinopse: </b> {state.data.overview}</h2>
                 <h2><b>Nota: </b>{state.data.vote_average.toFixed(2)}</h2>
                 <LinkButton to="/" key={state.data.id} onClick={()=>dispatch(goToIndex()) }>
                     Voltar para Home

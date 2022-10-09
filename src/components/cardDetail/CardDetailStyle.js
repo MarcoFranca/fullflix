@@ -6,24 +6,31 @@ export const DivContainer = styled.main`
   flex-direction: column;
   width: 100vw;
   min-height: calc(100vh - 10rem);
-  
-  
-  .img{
+
+
+  .img {
     width: 100%;
   }
-  
-  img{
+
+  img {
     object-fit: cover;
     width: 100%;
     height: 100%;
   }
 
-  @media screen and (min-width: 900px){
+  span {
+    padding: 0 .2rem;
+    border-right: solid 2px rgba(0, 0, 0);
+    :last-child{
+      border-right: none;
+    }
+  }
+
+  @media screen and (min-width: 900px) {
     flex-direction: row;
-    .img{
+    .img {
       width: 45%;
       max-width: 800px;
-      
       background-color: gray;
     }
   }
