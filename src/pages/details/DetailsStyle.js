@@ -7,12 +7,10 @@ export const Header = styled.header`
   justify-content: center;
   height: 5rem;
   background-color: ${colors.nightBackground};
+  box-sizing: border-box;
   
   h1{
     color: ${colors.colorWhite};
     font-size: 1.8rem;
   }
-`
-export const Main = styled.main`
-  height: auto;
 `

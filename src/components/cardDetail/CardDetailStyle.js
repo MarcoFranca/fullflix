@@ -28,10 +28,11 @@ export const DivContainer = styled.main`
 
   @media screen and (min-width: 900px) {
     flex-direction: row;
+    box-sizing: border-box;
+    width: 100%;
     .img {
-      width: 45%;
-      max-width: 800px;
-      background-color: gray;
+      width: 40%;
+      max-width: 800px; 
     }
   }
 `
@@ -40,7 +41,6 @@ export const DivCardContent = styled.div`
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
-  max-width: 100vw;
   h2 {
     font-weight: 500;
     font-size: 1.2rem;
@@ -53,7 +53,8 @@ export const DivCardContent = styled.div`
     }
   }
   @media screen and (min-width: 900px){
-    width: 100%;
+    width: 100vw;
+    box-sizing: border-box;
     justify-content: space-evenly;
     h2{
       

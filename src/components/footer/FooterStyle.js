@@ -5,6 +5,7 @@ export const FooterStyle = styled.footer`
   justify-content: center;
   background-color: black;
   color: white;
-  padding-inline-start: 0;
-  height: 5rem;
+  padding: 1rem;
+  height: 5rem; 
+  box-sizing: border-box;
 `
