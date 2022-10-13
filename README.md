@@ -28,6 +28,10 @@ Usuarios devem poder:
 
 ![Fullflix](./public/Fullflix.jpg)
 
+Gif
+
+![Fullflix](./public/fullflixgif.gif)
+
 ### Links
 
 - Live Site URL: [https://fullflix-xi.vercel.app/](https://fullflix-xi.vercel.app/)
@@ -132,19 +136,7 @@ export const getList = (setState) => {
 - uso da biblioteca `Date-fns`
 
 ```js
-export const getList = (setState) => {
-    axios.get(api.urlBase + api.popular + api.languageBr, {
-        headers: {
-            'Authorization': `Bearer ${api.token}`,
-            'Content-Type': `application/json;charset=utf-8`
-        }
-    })
-        .then((response) => {
-            setState(response.data.results)
-        })
-        .catch((error) => {
-            console.log(error)
-        })
+  <h2><b>Lançamento:</b>{format(new Date(state.data.release_date), 'dd/MM/yyyy')}</h2>
 }
 ```
 - Usar `Redux` para compartilhar a informação por todo o código
